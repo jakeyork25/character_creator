@@ -1,0 +1,1 @@
+-Name- has -- Hair Color -- hair, -- Eye Color -- eyes, and -- Skin Color -- skin. They are -- Height -- and weight -- Weight -- pounds.

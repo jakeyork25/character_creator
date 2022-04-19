@@ -1,0 +1,32 @@
+-- Hair Color --
+brown
+black
+gray
+blonde
+red
+-- Eye Color --
+green
+blue
+gray
+brown
+-- Skin Color --
+pasty
+white
+black
+dark
+brown
+tan
+green
+-- Height --
+4 ft
+5 ft
+5'6"
+6 ft
+6'6"
+7 ft
+-- Weight --
+100
+125
+150
+175
+200
