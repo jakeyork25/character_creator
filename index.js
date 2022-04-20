@@ -18,8 +18,8 @@ const PullSubarray = (arr, startIndex, endIndex) => {
     return arr.slice(startIndex + 1, endIndex);
 }
 
-const GetTextArray = () => {
-    var textFile = fs.readFileSync('appearance.txt').toString();
+const GetTextArray = (fileName) => {
+    var textFile = fs.readFileSync(`${fileName}.txt`).toString();
     return textFile.split('\r\n');
 }
 
@@ -43,40 +43,71 @@ const GetTitles = (textArray) => {
     return titles;
 }
 
-const ChooseAppearanceOptions = (textArray, titleIndexes, startIndex, endIndex) => {
-    var appearanceOptions = PullSubarray(textArray, titleIndexes[startIndex], titleIndexes[endIndex]);
-    return appearanceOptions[randomInt(0, appearanceOptions.length - 1)];
+const ChooseOptions = (textArray, titleIndexes, startIndex, endIndex) => {
+    var options = PullSubarray(textArray, titleIndexes[startIndex], titleIndexes[endIndex]);
+    return options[randomInt(0, options.length - 1)];
 }
 
-const GenerateAppearAttrList = (numOfAttr, textArray, titleIndexes) => {
+const GenerateAttrList = (numOfAttr, textArray, titleIndexes) => {
     var arr = []
     for(var i = 0; i < numOfAttr; i++) {
-        var appearAttr = ChooseAppearanceOptions(textArray, titleIndexes, i, i + 1);
-        arr.push(appearAttr);
+        var attr = ChooseOptions(textArray, titleIndexes, i, i + 1);
+        arr.push(attr);
     }
     return arr;
 }
 
-const CreateAppearanceDescription = (attrList, titles) => {
-    var descText = fs.readFileSync('desc.txt').toString();
+const GenerateIntList = (numOfAttr, textArray, titleIndexes) => {
+    var arr = []
+    for(var i = 0; i < numOfAttr; i++) {        
+        var smallest = parseInt(textArray[titleIndexes[i] + 1]);
+        var largest = parseInt(textArray[titleIndexes[i] + 2]);
+        var int = randomInt(smallest, largest);
+        arr.push(int);
+    }
+    return arr;
+}
+
+const CreateDescription = (attrList, titles, descText) => {
     for(var i = 0; i < titles.length; i++) {
         descText = descText.replace(titles[i], attrList[i]);
     }
     return descText;
 }
 
-const GenerateAppearance = () => {
-    let textArray = GetTextArray();
+//The Big Three
+const GenerateFromFiles = (descText) => {
+    let fileArray = ['appearance', 'background'];
+    for(var i = 0; i < fileArray.length; i++) {
+        let textArray = GetTextArray(fileArray[i]);
+        let titles = GetTitles(textArray);
+        let titleIndexes = GetTitleIndexes(textArray);
+        let attrList = GenerateAttrList(titles.length, textArray, titleIndexes);
+        descText = CreateDescription(attrList, titles, descText);
+    }
+    return descText;
+}
+
+const GenerateFromInt = (descText) => {
+    let textArray = GetTextArray('integer');
     let titles = GetTitles(textArray);
     let titleIndexes = GetTitleIndexes(textArray);
-    let attrList = GenerateAppearAttrList(titles.length, textArray, titleIndexes);
-    let descText = CreateAppearanceDescription(attrList, titles);
-    console.log(descText)
+    let intList = GenerateIntList(titles.length, textArray, titleIndexes);
+    descText = CreateDescription(intList, titles, descText);
+    return descText;
 }
+
+const GenerateFromScraping = (descText) => {
+
+}
+
 
 const CreateCharacter = async () => {
     //const page = InitPage();
-    GenerateAppearance();
+    let descText = fs.readFileSync('desc.txt').toString();
+    descText = GenerateFromFiles(descText);
+    descText = GenerateFromInt(descText);
+    console.log(descText);
 }
 
 CreateCharacter();

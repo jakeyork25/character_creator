@@ -1,1 +1,2 @@
--Name- has -- Hair Color -- hair, -- Eye Color -- eyes, and -- Skin Color -- skin. They are -- Height -- and weight -- Weight -- pounds.
+-Name- has -- Hair Color -- hair, -- Eye Color -- eyes, and -- Skin Color -- skin. They are -- Height -- inches tall and weigh -- Weight -- pounds.
+-Name- is -- Age -- years old and was born in the -- Location -- of -- LocName --.
