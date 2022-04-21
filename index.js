@@ -36,8 +36,9 @@ const GetTitleIndexes = (textArray) => {
 const GetTitles = (textArray) => {
     var titles = []
     for (var i=0; i<textArray.length; i++){
-        if (textArray[i].includes("-")) {
-            titles.push(textArray[i])
+        var text = textArray[i];
+        if (text.includes("-")) {
+            titles.push(text);
         }
     }
     return titles;
@@ -68,9 +69,37 @@ const GenerateIntList = (numOfAttr, textArray, titleIndexes) => {
     return arr;
 }
 
+const GenerateScrapeList = async (titles) => {
+    var arr = [];
+    puppeteerExtra.use(stealthPluggin());
+    const browser = await puppeteerExtra.launch({ headless: true });
+    const page = await browser.newPage();
+    page.setDefaultNavigationTimeout(0);
+    await page.goto('https://www.behindthename.com/random/');
+    const mythButton = await page.$('input[id="usage-myth"]');
+    await mythButton.click();
+    const anciButton = await page.$('input[id="usage-anci"]');
+    await anciButton.click();
+    const fntsyButton = await page.$('input[id="usage-fntsy"]');
+    await fntsyButton.click();
+    const [submitButton] = await page.$x('//center/form/div[1]/input');
+    await submitButton.click();
+    for(var i = 0; i < titles.length; i++) {
+        await page.waitForXPath('//div[@class="random-results"]/a');
+        var [nameDiv] = await page.$x('//div[@class="random-results"]/a');
+        var name = await nameDiv.evaluate(el => el.textContent);
+        arr.push(name);
+        var [regenButton] = await page.$x('//div[@id="body-inner"]/div[1]/div/nav/a');
+        await regenButton.click();
+        await page.waitForTimeout(2000);
+    }
+    browser.close();
+    return arr;
+}
+
 const CreateDescription = (attrList, titles, descText) => {
     for(var i = 0; i < titles.length; i++) {
-        descText = descText.replace(titles[i], attrList[i]);
+        descText = descText.replaceAll(titles[i], attrList[i]);
     }
     return descText;
 }
@@ -97,17 +126,22 @@ const GenerateFromInt = (descText) => {
     return descText;
 }
 
-const GenerateFromScraping = (descText) => {
-
+const GenerateFromScraping = async (descText) => {
+    let textArray = GetTextArray('scrape');
+    let titles = GetTitles(textArray);
+    let scrapeList = await GenerateScrapeList(titles);
+    descText = CreateDescription(scrapeList, titles, descText);
+    return descText;
 }
 
 
 const CreateCharacter = async () => {
-    //const page = InitPage();
     let descText = fs.readFileSync('desc.txt').toString();
     descText = GenerateFromFiles(descText);
     descText = GenerateFromInt(descText);
+    descText = await GenerateFromScraping(descText);
     console.log(descText);
+
 }
 
 CreateCharacter();

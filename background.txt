@@ -6,10 +6,3 @@ kingdom
 trenches
 swamps
 plains
-
--- LocName --
-Logindow
-Dornair
-Jugo
-Palenti
-Soldire
