@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Acrobatics
 Animal Handling
 Arcana
@@ -15,4 +16,23 @@ Persuasion
 Religion
 Sleight of Hand
 Stealth
+=======
+Acrobatics
+Animal Handling
+Arcana
+Athletics
+Deception
+History
+Insight
+Intimidation
+Investigation
+Medicine
+Nature
+Perception
+Performance
+Persuasion
+Religion
+Sleight of Hand
+Stealth
+>>>>>>> 80f6d7d (initial commit)
 Survival

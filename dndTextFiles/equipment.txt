@@ -1,0 +1,50 @@
+-martialWeapon-
+battleaxe
+flail
+glaive
+greataxe
+greatsword
+halberd
+lance
+longsword
+maul
+morningstar
+pike
+rapier
+scimitar
+shortsword
+trident
+war pick
+warhammer
+whip
+blowgun
+hand crossbow
+heavy crossbow
+longbow
+net
+-simpleMeleeWeapon-
+club
+dagger
+greatclub
+handaxe
+javelin
+light hammer
+mace
+quarterstaff
+sickle
+spear
+-simpleWeapon-
+club
+dagger
+greatclub
+handaxe
+javelin
+light hammer
+mace
+quarterstaff
+sickle
+spear
+light crossbow
+dart
+shortbow
+sling

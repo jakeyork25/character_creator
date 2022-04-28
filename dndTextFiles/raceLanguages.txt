@@ -1,0 +1,18 @@
+-Dragonborn-
+Common, Draconic
+-Dwarf-
+Common, Dwarvish
+-Elf-
+Common, Elvish
+-Gnome-
+Common, Gnomish, Undercommon
+-Half-elf-
+Common, Elvish, Extra
+-Halfling-
+Common, Halfling
+-Half-orc-
+Common, Orc
+-Human-
+Common, Extra
+-Tiefling-
+Common, Infernal

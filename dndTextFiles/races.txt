@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dragonborn
 dwarf
 elf
@@ -7,3 +8,14 @@ halfling
 half-orc
 human
 tiefling
+=======
+Dragonborn
+Dwarf
+Elf
+Gnome
+Half-elf
+Halfling
+Half-orc
+Human
+Tiefling
+>>>>>>> 80f6d7d (initial commit)

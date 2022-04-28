@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acolyte
 charlatan
 criminal
@@ -11,3 +12,18 @@ sage
 sailor
 soldier
 urchin
+=======
+Acolyte
+Charlatan
+Criminal
+Entertainer
+Folk hero
+Guild artisan
+Hermit
+Noble
+Outlander
+Sage
+Sailor
+Soldier
+Urchin
+>>>>>>> 80f6d7d (initial commit)

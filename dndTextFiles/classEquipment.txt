@@ -1,0 +1,24 @@
+-Barbarian-
+a greataxe/$1martialWeapon, two handaxes/$1simpleWeapon, an explorers pack, four javelins
+-Bard-
+a rapier/a longsword/$1simpleWeapon, a diplomat's pack/an entertainer's pack, a lute/$1musicalInstrument, leather armor, a dagger
+-Cleric-
+a mace, scale mail/leather armor, a light crossbow and 20 bolts/$1simpleWeapon, a priest's pack/an explorer's pack, a shield, a holy symbol
+-Druid-
+a wooden shield/$1simpleWeapon, a scimitar/$1simpleMeleeWeapon, leather armor, an explorer's pack, a druidic focus
+-Fighter-
+chain mail/leather armor and longbow with 20 arrows, $1martialWeapon and a shield/$2martialWeapon, a light crossbow and 20 bolts/two handaxes, a dungeoneer's pack/an explorer's pack
+-Monk-
+a shortswor/$1simpleWeapon, a dungeoneer's pack/an explorer's pack, 10 darts
+-Paladin-
+$1martialWeapon and a shield/$2martialWeapon, five javelins/$1simpleMeleeWeapon, a priest's pack/an explorer's pack, chain mail, a holy symbol
+-Ranger-
+scale mail/leather armor, two shortswords/$2simpleMeleeWeapons, a dungeoneer's pack/an explorer's pack, a longbow, a quiver of 20 arrows
+-Rogue-
+a rapier/a shortsword, a shortbow and quiver of 20 arrows/a shortsword, a burglar's pack/a dungeoneer's pack/an explorer's pack, leather armor, two daggers, thieve's tools
+-Sorcerer-
+a light crossbow and 20 bolts/$1simpleWeapon, a component pouch/an arcane focus, a dungeoneer's pack/an explorer's pack, two daggers
+-Warlock-
+a light crossbow and 20 bolts/$1simpleWeapon, a component pouch/an arcane focus, a scholar's pack/a dungeoneer's pack, leather armor, $1simpleWeapon, two daggers
+-Wizard-
+a quarterstaff/a dagger, a component pouch/an arcane focus, a scholar's pack/an explorer's pack, a spellbook

@@ -1,0 +1,26 @@
+-Acolyte-
+Extra, Extra
+-Charlatan-
+None
+-Criminal-
+None
+-Entertainer-
+None
+-Folk hero-
+None
+-Guild artisan-
+Extra
+-Hermit-
+Extra
+-Noble-
+Extra
+-Outlander-
+Extra
+-Sage-
+Extra, Extra
+-Sailor-
+None
+-Soldier-
+None
+-Urchin-
+None

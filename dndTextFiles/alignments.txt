@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Lawful Good
 Neutral Good
 Chaotic Good
@@ -6,4 +7,14 @@ Neutral
 Chaotic Neutral
 Lawful Evil
 Neutral Evil
+=======
+Lawful Good
+Neutral Good
+Chaotic Good
+Lawful Neutral
+Neutral
+Chaotic Neutral
+Lawful Evil
+Neutral Evil
+>>>>>>> 80f6d7d (initial commit)
 Chaotic Evil
